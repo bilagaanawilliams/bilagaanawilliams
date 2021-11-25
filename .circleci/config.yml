@@ -72,7 +72,7 @@ jobs:
       - run: npm i -s
       - run: node index -t 58 -r 2 -e viethangdangha@outlook.com
  exemple_no_8:
-   machine:
+    machine:
       image: ubuntu-2004:202101-01
     resource_class: small
     steps:
